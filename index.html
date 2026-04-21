@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>برنامج حماية البراعم الرياضية</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            margin-bottom: 40px;
+        }
+
+        .logo {
+            font-size: 3rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+        }
+
+        .shield-icon {
+            font-size: 4rem;
+            color: #ff6b6b;
+            margin-bottom: 20px;
+        }
+
+        /* Main Content */
+        .goals-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .goal-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(15px);
+            border-radius: 20px;
+            padding: 40px 30px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            transition: all 0.4s ease;
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .goal-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #ff6b6b, #4ecdc4, #45b7d1);
+        }
+
+        .goal-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.2);
+            border-color: #4ecdc4;
+        }
+
+        .goal-icon {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .safety-physical {
+            color: #ff6b6b;
+        }
+
+        .safety-mental {
+            color: #4ecdc4;
+        }
+
+        .coaches {
+            color: #45b7d1;
+        }
+
+        .parents {
+            color: #feca57;
+        }
+
+        .emergency {
+            color: #ff9ff3;
+        }
+
+        .monitoring {
+            color: #54a0ff;
+        }
+
+        .goal-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+
+        .goal-desc {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .features-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .features-list li {
+            padding: 8px 0;
+            padding-right: 30px;
+            position: relative;
+            font-size: 1rem;
+            color: #666;
+        }
+
+        .features-list li::before {
+            content: '✓';
+            position: absolute;
+            right: 0;
+            color: #4ecdc4;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* Stats Section */
+        .stats-section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(15px);
+            border-radius: 20px;
+            padding: 50px 40px;
+            text-align: center;
+            margin-bottom: 50px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .stat-item {
+            position: relative;
+        }
+
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 1.2rem;
+            color: #555;
+            margin-top: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(0, 0, 0, 0.9);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            border-radius: 20px;
+            margin-top: 50px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.2rem;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(255, 107, 107, 0.4);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(255, 107, 107, 0.6);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 2rem;
+            }
+
+            .shield-icon {
+                font-size: 3rem;
+            }
+
+            .goals-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .goal-card {
+                padding: 30px 20px;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .goal-card {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .goal-card:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .goal-card:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .goal-card:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        .goal-card:nth-child(4) {
+            animation-delay: 0.4s;
+        }
+
+        .goal-card:nth-child(5) {
+            animation-delay: 0.5s;
+        }
+
+        .goal-card:nth-child(6) {
+            animation-delay: 0.6s;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <i class="fas fa-shield-alt shield-icon"></i>
+            <h1 class="logo">حماية البراعم الرياضية</h1>
+            <p style="font-size: 1.3rem; color: #666; font-weight: 300;">
+                برنامج شامل لحماية الأطفال في كرة القدم والسباحة
+            </p>
+        </header>
+
+        <!-- Goals Grid -->
+        <div class="goals-grid">
+            <!-- السلامة الجسدية -->
+            <div class="goal-card">
+                <i class="fas fa-heartbeat goal-icon safety-physical"></i>
+                <h3 class="goal-title">السلامة الجسدية</h3>
+                <p class="goal-desc">حماية الأطفال من الإصابات الرياضية وضمان بيئة تدريب آمنة 100%</p>
+                <ul class="features-list">
+                    <li>فحوصات طبية دورية</li>
+                    <li>معدات حماية معتمدة</li>
+                    <li>برامج إحماء وتبريد</li>
+                    <li>تدريبات تقنية صحيحة</li>
+                    <li>حد أقصى لساعات التدريب</li>
+                </ul>
+            </div>
+
+            <!-- السلامة النفسية -->
+            <div class="goal-card">
+                <i class="fas fa-brain goal-icon safety-mental"></i>
+                <h3 class="goal-title">السلامة النفسية</h3>
+                <p class="goal-desc">تقليل المخاطر النفسية والضغط العاطفي لبناء شخصية متوازنة</p>
+                <ul class="features-list">
+                    <li>منع التنمر والعنف اللفظي</li>
+                    <li>تدريب على التعامل مع الضغط</li>
+                    <li>برامج دعم نفسي</li>
+                    <li>تشجيع الروح الرياضية</li>
+                    <li>تجنب الضغط الزائد للفوز</li>
+                </ul>
+            </div>
+
+            <!-- تأهيل المدربين -->
+            <div class="goal-card">
+                <i class="fas fa-chalkboard-teacher goal-icon coaches"></i>
+                <h3 class="goal-title">تأهيل المدربين</h3>
+                <p class="goal-desc">تدريب المدربين على أفضل الممارسات العالمية للسلامة</p>
+                <ul class="features-list">
+                    <li>شهادات تدريب معتمدة</li>
+                    <li>دورات الإسعافات الأولية</li>
+                    <li>تدريب على السلامة النفسية</li>
+                    <li>تحديث مستمر للمعرفة</li>
+                    <li>تقييم أداء دوري</li>
+                </ul>
+            </div>
+
+            <!-- إشراك أولياء الأمور -->
+            <div class="goal-card">
+                <i class="fas fa-users goal-icon parents"></i>
+                <h3 class="goal-title">إشراك أولياء الأمور</h3>
+                <p class="goal-desc">توعية الأهالي وإشراكهم في حماية أطفالهم</p>
+                <ul class="features-list">
+                    <li>ندوات توعية دورية</li>
+                    <li>دليل الأهالي الشامل</li>
+                    <li>تطبيق مراقبة التقدم</li>
+                    <li>اجتماعات دورية مشتركة</li>
+                    <li>قناة اتصال مباشرة</li>
+                </ul>
+            </div>
+
+            <!-- نظام الطوارئ -->
+            <div class="goal-card">
+                <i class="fas fa-ambulance goal-icon emergency"></i>
+                <h3 class="goal-title">نظام الطوارئ</h3>
+                <p class="goal-desc">استجابة فورية وفعالة لأي طارئ طبي أو أمني</p>
+                <ul class="features-list">
+                    <li>خط ساخن 24/7</li>
+                    <li>فريق إسعافات مدرب</li>
+                    <li>خطة طوارئ مكتوبة</li>
+                    <li>تمارين إخلاء دورية</li>
+                    <li>تأمين طبي شامل</li>
+                </ul>
+            </div>
+
+            <!-- المراقبة والتقييم -->
+            <div class="goal-card">
+                <i class="fas fa-chart-line goal-icon monitoring"></i>
+                <h3 class="goal-title">المراقبة والتقييم</h3>
+                <p class="goal-desc">متابعة مستمرة وتحسين البرنامج بناءً على البيانات</p>
+                <ul class="features-list">
+                    <li>تقارير شهرية مفصلة</li>
+                    <li>استطلاعات رضا دورية</li>
+                    <li>تحليل البيانات الرياضية</li>
+                    <li>مراجعة المخاطر الشهرية</li>
+                    <li>تحديث الإجراءات باستمرار</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Stats Section -->
+        <div class="stats-section">
+            <h2 style="font-size: 2.5rem; margin-bottom: 20px; color: #2c3e50;">نتائج ملموسة</h2>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-number">100%</span>
+                    <div class="stat-label">سلامة مضمونة</div>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">95%</span>
+                    <div class="stat-label">انخفاض الإصابات</div>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">5000+</span>
+                    <div class="stat-label">طفل محمي</div>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">98%</span>
+                    <div class="stat-label">رضا الأهالي</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <h3 style="margin-bottom: 20px;">انضم إلى برنامج حماية البراعم الرياضية اليوم</h3>
+            <p style="margin-bottom: 30px; font-size: 1.1rem;">
+                نبني مستقبل رياضي آمن لأطفالنا 🇸🇦⚽🏊‍♂️
+            </p>
+            <a href="#contact" class="cta-button">
+                <i class="fas fa-rocket"></i> ابدأ الآن
+            </a>
+        </footer>
+    </div>
+
+    <script>
+        // Simple scroll animation trigger
+        window.addEventListener('scroll', () => {
+            const cards = document.querySelectorAll('.goal-card');
+            cards.forEach(card => {
+                const cardTop = card.getBoundingClientRect().top;
+                const cardVisible = 150;
+                if (cardTop < window.innerHeight - cardVisible) {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
