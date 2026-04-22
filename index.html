@@ -21,6 +21,31 @@
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
         }
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url(headTitle.png);
+            background-size: cover;
+            background-position: inherit;
+            background-attachment: scroll;
+            opacity: 0.5; /* ← غير هذه القيمة حسب رغبتك */
+            z-index: 0;
+        }
+        header {
+            /* باقي الخصائص الموجودة... */
+            position: relative;
+            background-image: none; /* احذف background-image من هنا */
+        }
+        
+        /* وتأكد أن المحتوى داخل الـ header فوق الطبقة */
+        header > * {
+            position: relative;
+            z-index: 1;
+        }
         
         .container {
             max-width: 1200px;
@@ -288,21 +313,7 @@
 
 <body>
     <div class="container">
-        <header style="
-            background-image: url(headTitle.png);
-            background-size: cover;
-            background-position: inherit;
-            background-attachment: scroll;
-            padding: 4rem 2rem;
-            text-align: center;
-            color: white;
-            position: relative;
-            min-height: 27vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        ">
+        <header style="" >
             <i class="fas fa-shield-alt shield-icon" style="
                 font-size: 4rem; 
                 color: #FFD700; 
