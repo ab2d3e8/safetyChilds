@@ -87,9 +87,27 @@
             gap: 30px;
             margin-bottom: 50px;
         }
-
+        .goal-bg-physical::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        
+            background: url('safetyPhysical.png') center/contain no-repeat;
+            
+            opacity: 0.2; /* شفافية الصورة */
+        
+            z-index: 0;
+        }
+        
+        /* خلي المحتوى فوق الصورة */
+        .goal-card > * {
+            position: relative;
+            
+        }
         .goal-card {
-            background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(15px);
             border-radius: 20px;
             padding: 40px 30px;
@@ -98,6 +116,7 @@
             border: 2px solid transparent;
             position: relative;
             overflow: hidden;
+            z-index: 1;
         }
 
         .goal-card::before {
@@ -360,7 +379,7 @@
                 ستة محاور أساسية لضمان بيئة رياضية آمنة ومتكاملة
             </p>
         </div>
-        <div class="goals-grid" >
+        <div class="goal-card goal-bg-physical">
             <!-- السلامة الجسدية -->
             <div class="goal-card" style="    
                 background-image: url(safetyPhysical.png);
