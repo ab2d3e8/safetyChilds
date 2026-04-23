@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>استمارة حماية البراعم الرياضية</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: #f8f9fa;
+            padding: 20px;
+        }
+
+        .form-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #ff6b6b, #4ecdc4);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .header-title {
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
+
+        .form-section {
+            padding: 30px;
+            border-bottom: 3px solid #f0f0f0;
+        }
+
+        .section-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #ff6b6b;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .form-group {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .form-group.full-width {
+            flex: 100%;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            color: #555;
+            margin-bottom: 8px;
+            font-size: 1rem;
+        }
+
+        input[type="text"],
+        input[type="date"],
+        input[type="number"] {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e1e8ed;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-family: 'Cairo', sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #4ecdc4;
+            box-shadow: 0 0 0 3px rgba(78,205,196,0.1);
+        }
+
+        .checkbox-group {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 1rem;
+        }
+
+        .checkbox-item input[type="checkbox"] {
+            width: auto;
+            transform: scale(1.3);
+        }
+
+        .notes-area {
+            min-height: 80px;
+            resize: vertical;
+        }
+
+        .signature-section {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 2px dashed #ddd;
+        }
+
+        .signature-box {
+            flex: 1;
+            height: 60px;
+            border: 2px dashed #4ecdc4;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-style: italic;
+            color: #999;
+        }
+
+        .footer {
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        @media print {
+            body { padding: 0; }
+            .form-container { box-shadow: none; }
+        }
+
+        @media (max-width: 768px) {
+            .form-row { flex-direction: column; }
+            .form-group { min-width: 100%; }
+            .signature-section { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <!-- Header -->
+        <div class="header">
+            <div class="logo">
+                <i class="fas fa-seedling"></i> حماية البراعم الرياضية
+            </div>
+            <div class="header-title">استمارة التسجيل والسلامة</div>
+        </div>
+
+        <!-- البيانات الأساسية -->
+        <div class="form-section">
+            <h2 class="section-title">
+                <i class="fas fa-user"></i>
+                📌 البيانات الأساسية
+            </h2>
+            <div class="form-row">
+                <div class="form-group">
+                    <label>اسم اللاعب:</label>
+                    <input type="text" placeholder="اكتب اسم اللاعب كاملاً">
+                </div>
+                <div class="form-group">
+                    <label>العمر:</label>
+                    <input type="number" min="4" max="14" placeholder="___">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label>تاريخ الميلاد:</label>
+                    <input type="date">
+                </div>
+                <div class="form-group">
+                    <label>نوع الرياضة:</label>
+                    <div class="checkbox-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="football">
+                            <label for="football">كرة قدم</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="swimming">
+                            <label for="swimming">سباحة</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="other">
+                            <label for="other">أخرى:</label>
+                            <input type="text" style="width: 100px; padding: 5px;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group full-width">
+                <label>اسم النادي / الأكاديمية:</label>
+                <input type="text" placeholder="اكتب اسم النادي أو الأكاديمية">
+            </div>
+        </div>
+
+        <!-- الحالة الصحية -->
+        <div class="form-section">
+            <h2 class="section-title">
+                <i class="fas fa-heartbeat"></i>
+                🏥 الحالة الصحية
+            </h2>
+            <div class="form-row">
+                <div class="form-group">
+                    <label>هل يعاني من أمراض مزمنة؟</label>
+                    <div class="checkbox-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="chronic-yes">
+                            <label for="chronic-yes">نعم</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="chronic-no">
+                            <label for="chronic-no">لا</label>
+                        </div>
+                    </div>
+                    <input type="text" placeholder="إذا نعم، اذكرها: ________">
+                </div>
+                <div class="form-group">
+                    <label>هل لديه حساسية؟</label>
+                    <div class="checkbox-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="allergy-yes">
+                            <label for="allergy-yes">نعم</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="allergy-no">
+                            <label for="allergy-no">لا</label>
+                        </div>
+                    </div>
+                    <input type="text" placeholder="نوع الحساسية: ________">
+                </div>
+            </div>
+            <div class="form-group full-width">
+                <label>هل يتناول أدوية بشكل مستمر؟</label>
+                <div style="margin-bottom: 10px;">
+                    <div class="checkbox-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="med-yes">
+                            <label for="med-yes">نعم</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="med-no">
+                            <label for="med-no">لا</label>
+                        </div>
+                    </div>
+                </div>
+                <input type="text" placeholder="اذكرها: ________">
+            </div>
+        </div>
+
+        <!-- سجل الإصابات -->
+        <div class="form-section">
+            <h2 class="section-title">
+                <i class="fas fa-bandage"></i>
+                🚨 سجل الإصابات
+            </h2>
+            <div class="form-row">
+                <div class="form-group">
+                    <label>هل تعرض لإصابات سابقة؟</label>
+                    <div class="checkbox-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="injury-yes">
+                            <label for="injury-yes">نعم</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="injury-no">
+                            <label for="injury-no">لا</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>نوع الإصابة:</label>
+                    <input type="text" placeholder="________">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label>تاريخها:</label>
+                    <input type="date">
+                </div>
+                <div class="form-group">
+                    <label>هل ما زال يعاني من آثارها؟</label>
+                    <div class="checkbox-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="effects-yes">
+                            <label for="effects-yes">نعم</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="effects-no">
+                            <label for="effects-no">لا</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- الحالة النفسية -->
+        <div class="form-section">
+            <h2 class="section-title">
+                <i class="fas fa-brain"></i>
+                🧠 الحالة النفسية والسلوكية
+            </h2>
+            <div class="form-group">
+                <label>هل يعاني من:</label>
+                <div class="checkbox-group" style="flex-direction: column; gap: 10px;">
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="fear">
+                        <label for="fear">خوف أثناء اللعب</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="anxiety">
+                        <label for="anxiety">قلق</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="shyness">
+                        <label for="shyness">خجل شديد</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="none">
+                        <label for="none">لا يوجد</label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group full-width">
+                <label>ملاحظات المدرب:</label>
+                <textarea class="notes-area" placeholder="اكتب أي ملاحظات هنا..."></textarea>
+            </div>
+        </div>
+
+        <!-- بيانات ولي الأمر -->
+        <div class="form-section">
+            <h2 class="section-title">
+                <i class="fas fa-users"></i>
+                👨‍👩‍👧 بيانات ولي الأمر
+            </h2>
+            <div class="form-row">
+                <div class="form-group">
+                    <label>الاسم:</label>
+                    <input type="text" placeholder="________">
+                </div>
+                <div class="form-group">
+                    <label>رقم الهاتف:</label>
+                    <input type="text" placeholder="05xxxxxxxx">
+                </div>
+            </div>
+            <div class="form-group">
+                <label>رقم طوارئ آخر:</label>
+                <input type="text" placeholder="05xxxxxxxx">
+            </div>
+        </div>
+
+        <!-- إقرار ولي الأمر -->
+        <div class="form-section">
+            <h2 class="section-title">
+                <i class="fas fa-file-signature"></i>
+                ⚠️ إقرار ولي الأمر
+            </h2>
+            <div style="background: #fff3cd; padding: 20px; border-radius: 10px; border-left: 5px solid #ffc107; margin-bottom: 20px;">
+                <p style="margin: 0; font-weight: 600; color: #856404;">
+                    أقر أنا ولي أمر اللاعب بأن جميع البيانات صحيحة، وأوافق على مشاركة ابني في التمارين وفق إجراءات السلامة المعتمدة.
+                </p>
+            </div>
+            <div class="signature-section">
+                <div class="form-group">
+                    <label>الاسم:</label>
+                    <input type="text" style="width: 250px;">
+                </div>
+                <div class="signature-box">
+                    التوقيع: ____________________
+                </div>
+                <div class="form-group">
+                    <label>التاريخ:</label>
+                    <input type="date" style="width: 150px;">
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p><i class="fas fa-shield-alt"></i> برنامج حماية البراعم الرياضية</p>
+        </div>
+    </div>
+</body>
+</html>
