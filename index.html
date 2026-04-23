@@ -177,6 +177,7 @@
             font-size: 1.1rem;
             color: #555;
             margin-bottom: 20px;
+            font-weight: bold;
         }
 
         .features-list {
@@ -189,7 +190,8 @@
             padding-right: 30px;
             position: relative;
             font-size: 1rem;
-            color: #666;
+            color: navy;
+            font-weight: bold;
         }
 
         .features-list li::before {
@@ -303,30 +305,284 @@
 
         .goal-card {
             animation: fadeInUp 0.8s ease forwards;
+            position: relative;
+            overflow: hidden;
         }
 
         .goal-card:nth-child(1) {
             animation-delay: 0.1s;
+            background-image: linear-gradient(135deg, rgba(255,107,107,0.1), rgba(255,107,107,0.05));
+        }
+
+        .goal-card:nth-child(1)::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('1.png') center no-repeat;
+            opacity: 0.16;
+            z-index: 0;
         }
 
         .goal-card:nth-child(2) {
             animation-delay: 0.2s;
+            background-image: linear-gradient(135deg, rgba(255,107,107,0.1), rgba(255,107,107,0.05));
+        }
+
+        .goal-card:nth-child(2)::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('2.png') center no-repeat;
+            opacity: 0.16;
+            z-index: 0;
         }
 
         .goal-card:nth-child(3) {
             animation-delay: 0.3s;
+            background-image: linear-gradient(135deg, rgba(255,107,107,0.1), rgba(255,107,107,0.05));
+        }
+
+        .goal-card:nth-child(3)::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('3.png') center no-repeat;
+            opacity: 0.16;
+            z-index: 0;
         }
 
         .goal-card:nth-child(4) {
             animation-delay: 0.4s;
+            background-image: linear-gradient(135deg, rgba(255,107,107,0.1), rgba(255,107,107,0.05));
+        }
+
+        .goal-card:nth-child(4)::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('4.png') center no-repeat;
+            opacity: 0.16;
+            z-index: 0;
         }
 
         .goal-card:nth-child(5) {
             animation-delay: 0.5s;
+            background-image: linear-gradient(135deg, rgba(255,107,107,0.1), rgba(255,107,107,0.05));
+        }
+
+        .goal-card:nth-child(5)::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('5.png') center no-repeat;
+            opacity: 0.16;
+            z-index: 0;
         }
 
         .goal-card:nth-child(6) {
             animation-delay: 0.6s;
+            background-image: linear-gradient(135deg, rgba(255,107,107,0.1), rgba(255,107,107,0.05));
+        }
+
+        .goal-card:nth-child(6)::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('6.png') center no-repeat;
+            opacity: 0.16;
+            z-index: 0;
+        }
+
+        /* Footer Styles المحدث */
+        footer {
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.95), rgba(20, 20, 40, 0.9));
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+            border-radius: 25px;
+            margin-top: 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #ff6b6b, #4ecdc4, #45b7d1);
+            z-index: 1;
+        }
+
+        .footer-content {
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .footer-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .footer-title i {
+            font-size: 2.5rem;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .footer-author {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 25px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .author-avatar {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #ff6b6b, #4ecdc4);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: white;
+            box-shadow: 0 10px 30px rgba(255, 107, 107, 0.3);
+        }
+
+        .author-info h4 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+            background: linear-gradient(45deg, #ffffff, #f0f0f0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .author-role {
+            font-size: 1.1rem;
+            color: #4ecdc4;
+            font-weight: 500;
+            margin: 0;
+        }
+
+        .footer-divider {
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, #ff6b6b, #4ecdc4);
+            margin: 25px auto;
+            border-radius: 2px;
+        }
+
+        .footer-copy {
+            font-size: 1rem;
+            color: #b0b0b0;
+            margin: 0;
+            font-weight: 400;
+        }
+
+        /* تأثيرات الحركة */
+        .footer-author {
+            transition: all 0.3s ease;
+        }
+
+        .footer-author:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .author-avatar {
+            transition: all 0.3s ease;
+        }
+
+        .author-avatar:hover {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            footer {
+                padding: 40px 15px;
+                margin-top: 40px;
+            }
+            
+            .footer-title {
+                font-size: 1.6rem;
+            }
+            
+            .footer-author {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+            
+            .author-avatar {
+                width: 70px;
+                height: 70px;
+                font-size: 2rem;
+            }
+            
+            .author-info h4 {
+                font-size: 1.3rem;
+            }
+        }
+
+        .Linker {
+            background: linear-gradient(135deg, #ff6b6b, #4ecdc4);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .logoLink {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .Linker-title {
+            font-size: 1.8rem;
+            font-weight: 600;
         }
     </style>
 </head>
@@ -490,7 +746,7 @@
         </div>
 
         <!-- Footer -->
-        <footer>
+        <!-- <footer>
             <h3 style="margin-bottom: 20px;">انضم إلى برنامج حماية البراعم الرياضية اليوم</h3>
             <p style="margin-bottom: 30px; font-size: 1.1rem;">
                 نبني مستقبل رياضي آمن لأطفالنا 🇸🇦⚽🏊‍♂️
@@ -498,7 +754,42 @@
             <a href="#contact" class="cta-button">
                 <i class="fas fa-rocket"></i> ابدأ الآن
             </a>
+        </footer> -->
+        <div class="Linker">
+            <div class="logoLink">
+                <i class="fas fa-seedling"></i> استمارة التسجيل والسلامة
+            </div>
+            <div class="Linker-title">
+                <a href="reg.html" class="cta-button"> رابط تسجيل في الاستمارة</a>
+            </div>
+        </div>
+        <footer>
+            <div class="container">
+                <div class="footer-content">
+                    <h3 class="footer-title">
+                        <i class="fas fa-shield-alt"></i>
+                        إعداد البرنامج
+                    </h3>
+                    
+                    <div class="footer-author">
+                        <div class="author-avatar">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>علي بن محمد الرمحي</h4>
+                            <p class="author-role">كاتب شؤون إدارية</p>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-divider"></div>
+                    
+                    <p class="footer-copy">
+                       سنة الاعداد &copy; 2026 | برنامج شامل لحماية الأطفال في كرة القدم والسباحة
+                    </p>
+                </div>
+            </div>
         </footer>
+
     </div>
 
     <script>
