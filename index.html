@@ -584,6 +584,191 @@
             font-size: 1.8rem;
             font-weight: 600;
         }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: #f8f9fc;
+            border: 1.5px solid #e8e8f0;
+            border-radius: 12px;
+            padding: 20px 28px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            page-break-inside: avoid;
+        }
+ 
+        .footer-author {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+ 
+        .author-avatar {
+            width: 52px;
+            height: 52px;
+            background: linear-gradient(135deg, #e94560, #0f3460);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.4rem;
+            flex-shrink: 0;
+        }
+ 
+        .author-name {
+            font-size: 12pt;
+            font-weight: 800;
+            color: #1a1a2e;
+        }
+ 
+        .author-role {
+            font-size: 9pt;
+            color: #0f3460;
+            font-weight: 500;
+        }
+ 
+        .footer-meta {
+            text-align: left;
+            font-size: 8.5pt;
+            color: #999;
+            line-height: 1.8;
+        }
+ 
+        .footer-badge {
+            background: linear-gradient(135deg, #e94560, #0f3460);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 9.5pt;
+            font-weight: 700;
+            text-align: center;
+            flex-shrink: 0;
+        }
+ 
+        /* ===== REGISTRATION BANNER ===== */
+        .reg-banner {
+            background: linear-gradient(135deg, #e94560 0%, #0f3460 100%);
+            color: white;
+            border-radius: 10px;
+            padding: 16px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 18px;
+            page-break-inside: avoid;
+        }
+ 
+        .reg-banner-text {
+            font-size: 12pt;
+            font-weight: 700;
+        }
+ 
+        .reg-banner-sub {
+            font-size: 9pt;
+            opacity: 0.8;
+            margin-top: 2px;
+        }
+ 
+        .reg-banner-link {
+            background: rgba(255,255,255,0.2);
+            border: 2px solid rgba(255,255,255,0.5);
+            color: white;
+            padding: 8px 22px;
+            border-radius: 20px;
+            font-size: 10pt;
+            font-weight: 700;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+ 
+        /* =======================
+   PRINT VERSION
+======================= */
+@media print {
+
+    body {
+        background: #fff !important;
+        color: #000 !important;
+    }
+
+    .container {
+        max-width: 100%;
+        padding: 0;
+    }
+
+    /* حذف الظلال والخلفيات */
+    * {
+        box-shadow: none !important;
+        text-shadow: none !important;
+        /* background: none !important; */
+    }
+
+    header {
+        border: 2px solid #000;
+        border-radius: 0;
+        margin-bottom: 20px;
+    }
+
+    .logo {
+        color: #000 !important;
+        -webkit-text-fill-color: #000 !important;
+    }
+
+    /* ترتيب الكروت للطباعة */
+    .goals-grid {
+        display: block;
+    }
+
+    .goal-card {
+        border: 1px solid #000;
+        margin-bottom: 15px;
+        page-break-inside: avoid;
+        padding: 15px;
+    }
+
+    .goal-title {
+        color: #000;
+        font-size: 18px;
+    }
+
+    .goal-desc {
+        color: #000;
+        font-size: 14px;
+    }
+
+    .features-list li {
+        color: #000;
+        font-size: 13px;
+    }
+
+    /* إخفاء عناصر غير مهمة للطباعة 
+    .cta-button,
+    .Linker,
+    footer,
+    img {
+        display: none !important;
+    }*/
+
+    /* الإحصائيات */
+    .stats-section {
+        border: 1px solid #000;
+        page-break-inside: avoid;
+    }
+
+    .stat-number {
+        color: #000 !important;
+        -webkit-text-fill-color: #000 !important;
+    }
+
+    /* حجم الصفحة */
+    @page {
+        size: A4;
+        margin: 15mm;
+    }
+}
+
     </style>
 </head>
 
@@ -755,40 +940,31 @@
                 <i class="fas fa-rocket"></i> ابدأ الآن
             </a>
         </footer> -->
-        <div class="Linker">
-            <div class="logoLink">
-                <i class="fas fa-seedling"></i> استمارة التسجيل والسلامة
+           <!-- REGISTRATION BANNER -->
+        <div class="reg-banner">
+            <div>
+                <div class="reg-banner-text">🌱 استمارة التسجيل والسلامة</div>
+                <div class="reg-banner-sub">سجّل الآن للانضمام إلى البرنامج</div>
             </div>
-            <div class="Linker-title">
-                <a href="reg.html" class="cta-button"> رابط تسجيل في الاستمارة</a>
-            </div>
+            <a href="reg.html" class="reg-banner-link">رابط تسجيل في الاستمارة</a>
         </div>
-        <footer>
-            <div class="container">
-                <div class="footer-content">
-                    <h3 class="footer-title">
-                        <i class="fas fa-shield-alt"></i>
-                        إعداد البرنامج
-                    </h3>
-                    
-                    <div class="footer-author">
-                        <div class="author-avatar">
-                            <i class="fas fa-user-tie"></i>
-                        </div>
-                        <div class="author-info">
-                            <h4>علي بن محمد الرمحي</h4>
-                            <p class="author-role">كاتب شؤون إدارية</p>
-                        </div>
-                    </div>
-                    
-                    <div class="footer-divider"></div>
-                    
-                    <p class="footer-copy">
-                       سنة الاعداد &copy; 2026 | برنامج شامل لحماية الأطفال في كرة القدم والسباحة
-                    </p>
+    
+        <!-- FOOTER -->
+        <div class="footer">
+            <div class="footer-author">
+                <div class="author-avatar">👤</div>
+                <div>
+                    <div class="author-name">علي بن محمد الرمحي</div>
+                    <div class="author-role">كاتب شؤون إدارية</div>
                 </div>
             </div>
-        </footer>
+            <div class="footer-badge">🛡️ إعداد البرنامج</div>
+            <div class="footer-meta">
+                <div>سنة الإعداد: 2026</div>
+                <div>برنامج شامل لحماية الأطفال</div>
+                <div>كرة القدم والسباحة</div>
+            </div>
+        </div>
 
     </div>
 
